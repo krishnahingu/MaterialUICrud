@@ -27,18 +27,10 @@ dotenv.config({
     path: "./.env",
 });
 
-/* ################# CLIENT ENDPOINTS ###################### */
-
 // Handles any requests that doesn't match the above
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "build", "index.html"));
 });
-
-/* ################# end CLIENT ENDPOINTS ###################### */
-
-/* ################# UTILS ###################### */
-
-/* ################# end UTILS ###################### */
 
 // Start server
 const PORT = process.env.PORT || 3000;

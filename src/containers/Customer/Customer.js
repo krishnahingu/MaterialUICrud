@@ -1,5 +1,4 @@
 import { Button, Card, CircularProgress, makeStyles } from '@material-ui/core';
-import { fontSize, lineHeight } from '@material-ui/system';
 import React, { useEffect, useState } from 'react';
 import ReactFocusLock from 'react-focus-lock';
 import { useDispatch, useSelector } from 'react-redux';
@@ -85,8 +84,8 @@ const Customer = () => {
       <h1>Customers</h1>
       {isLoading && 
       <div className={classes.loading}>
-      <CircularProgress />
-    </div>}
+         <CircularProgress />
+      </div>}
       { view !== VIEW_TYPE.DELETE_VIEW  ? <CustomerList users={users} view={view} setView={setView} newuser={newuser} setUpdateUser={setUpdateUser} setNewUser={setNewUser} /> : ''}
       { view === VIEW_TYPE.ADD_VIEW ? (
         <div className={classes.updateView}>

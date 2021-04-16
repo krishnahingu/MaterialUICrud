@@ -34,13 +34,12 @@ const TableBodyCell = withStyles((theme) => ({
 const CustomerList = ({ users, view, setView, newuser, setNewUser, setUpdateUser }) => {
 
   const [groupSort ,setGroupSort] = useState(true);
-  //const [nameSort ,setNameSort] = useState(true);
   const [fieldName ,setFieldName] = useState('first_name');
   const sorDataOnGroup = () => {
     const temp = [...users];
     temp.sort((a, b) => {
-      let fa = a.[fieldName].toLowerCase(),
-          fb = b.[fieldName].toLowerCase();
+      let fa = a[fieldName].toLowerCase(),
+          fb = b[fieldName].toLowerCase();
       if (fa < fb) {
           return (groupSort) ? 1 : -1;
       }
@@ -69,8 +68,6 @@ const CustomerList = ({ users, view, setView, newuser, setNewUser, setUpdateUser
     />
   ));
 
-  
-
   const firstnameChange = (e) => {
     setNewUser({ ...newuser, first_name: e.target.value, email: newuser?.first_name + '@' + newuser?.last_name + '.com' });
   }
@@ -81,9 +78,7 @@ const CustomerList = ({ users, view, setView, newuser, setNewUser, setUpdateUser
     setFieldName(fieldName)
     setGroupSort(!groupSort)
   }
-
   
-  // TODO: May need to make table component
   return (
     <TableContainer>
       <Table>

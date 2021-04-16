@@ -1,19 +1,14 @@
 import React from 'react';
 import {
-  Switch, Route, useLocation, Redirect
+  Switch, Redirect
 } from 'react-router-dom';
 import Layout from '../components/layouts/Layout';
 import PrivateRoute from '../components/PrivateRoute';
 
 import Customer from '../containers/Customer/Customer';
 
-import { useOnMount, loadGooglePlacesScript } from '../utils/helpers';
-
 const Routes = () => {
-  const { pathname } = useLocation();
   const LayoutComponent = Layout;
-
-
   return (
     <LayoutComponent>
       <Switch>

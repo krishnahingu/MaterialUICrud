@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { PersonOutlineOutlined, BarChartOutlined, EventNoteOutlined } from '@material-ui/icons';
+import { BarChartOutlined } from '@material-ui/icons';
 
 import NavigationLink from './NavigationLink';
 

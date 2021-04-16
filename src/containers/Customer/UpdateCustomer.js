@@ -2,8 +2,6 @@ import { Button, makeStyles, TextField } from '@material-ui/core';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUserDetailsSuccess } from '../../store/actions/events';
-import { FocusOn ,AutoFocusInside} from 'react-focus-on';
-import { fontSize } from '@material-ui/system';
 
 const useStyles = makeStyles((theme) => ({
   updateView: {
@@ -95,9 +93,7 @@ const UpdateCustomer = ({ setView, id }) => {
             Delete Record
         </Button>
         </div>
-     
     </div>
-
   )
 };
 
