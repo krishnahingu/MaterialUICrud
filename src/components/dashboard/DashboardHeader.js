@@ -60,8 +60,7 @@ const DashboardHeader = () => {
 
       <div className={classes.options}>
         <div className={classes.option}>
-          <PersonOutlineOutlined className={classes.icon} />
-          {/* TODO: Get user role from API */}
+          {/* <PersonOutlineOutlined className={classes.icon} />
           <div className={classes.optionText}>Krishna hingu</div>
         </div>
 
@@ -72,7 +71,7 @@ const DashboardHeader = () => {
             onClick={onLogout}
           >
             Log out
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

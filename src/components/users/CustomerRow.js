@@ -2,7 +2,8 @@ import React from 'react';
 import clsx from 'clsx';
 import { string, number, func } from 'prop-types';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import { TableRow, TableCell } from '@material-ui/core';
+import { TableRow, TableCell, Button } from '@material-ui/core';
+import VIEW_TYPE from '../../utils/constants/eventTypes';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,6 +34,7 @@ const CustomerRow = ({
   customerGroup,
   customerName,
   setView,
+  view,
   setUpdateUser
 }) => {
   const classes = useStyles();
@@ -41,7 +43,10 @@ const CustomerRow = ({
     <TableRow key={key} classes={{ root: clsx(classes.root, { [classes.colored]: isRowColored }) }}>
       <TableBodyCell size="small">{id}</TableBodyCell>
       <TableBodyCell size="small">{customerGroup}</TableBodyCell>
-      <TableBodyCell size="small" onClick={()=>{ setUpdateUser(id);setView(2)}}>{customerName}</TableBodyCell>
+      <Button tabIndex={ (view===VIEW_TYPE.UPDATE_VIEW ) ? -1 : id}  onClick={()=>{ setUpdateUser(id);setView(2)}}>
+        <TableBodyCell size="small" >{customerName}</TableBodyCell>
+      </Button>
+      
     </TableRow>
   );
 };

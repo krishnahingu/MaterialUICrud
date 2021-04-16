@@ -39,6 +39,7 @@ const CustomerList = ({ users, view, setView, newuser, setNewUser, setUpdateUser
       index={index}
       key={id}
       id={id}
+      view={view}
       customerGroup={first_name}
       customerName={last_name}
       setView={setView}

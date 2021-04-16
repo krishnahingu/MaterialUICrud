@@ -57,7 +57,6 @@ const UpdateCustomer = ({ setView, id }) => {
   return (
     <div className={classes.updateView}>
       <div className={classes.LableText}> Name:</div>
-      <FocusOn >
         <TextField id="standard-basic"
           value={updateName}
           size="small"
@@ -96,7 +95,6 @@ const UpdateCustomer = ({ setView, id }) => {
             Delete Record
         </Button>
         </div>
-        </FocusOn>
      
     </div>
 

@@ -1,4 +1,5 @@
-import { Button, CircularProgress, makeStyles } from '@material-ui/core';
+import { Button, Card, CircularProgress, makeStyles } from '@material-ui/core';
+import { fontSize, lineHeight } from '@material-ui/system';
 import React, { useEffect, useState } from 'react';
 import ReactFocusLock from 'react-focus-lock';
 import { useDispatch, useSelector } from 'react-redux';
@@ -40,6 +41,16 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  root:{
+    height:'46px',
+    margin:'30px',
+    backgroundColor:'aliceblue',
+    fontSize:'20px',
+    lineHeight:'22px',
+    display:'flex',
+    alignItems:'center',
+
   }
 }));
 
@@ -92,26 +103,29 @@ const Customer = () => {
       ) : ''}
       { view === VIEW_TYPE.UPDATE_VIEW ? (
         <div className={classes.buttonView}>
-          <Button variant="contained"
-            color="success"
-            tabIndex={3}
-            onClick={saveuser}
-            className={classes.textbutton}
-            fullWidth={true}
-          >
-            Save
-          </Button>
-          <Button variant="contained"
-            color="secondary"
-            tabIndex={4}
-            fullWidth={true}
-            className={classes.textbutton}
-            onClick={() => setView(0)}
-          >
-            Cancel
-          </Button>
-        </div>) : ''}
+        <Button variant="contained"
+          color="success"
+          tabIndex={3}
+          onClick={saveuser}
+          className={classes.textbutton}
+          fullWidth={true}
+        >
+          Save
+        </Button>
+        <Button variant="contained"
+          color="secondary"
+          tabIndex={4}
+          fullWidth={true}
+          className={classes.textbutton}
+          onClick={() => setView(0)}
+        >
+          Cancel
+        </Button>
+      </div>) : ''}
       { view === VIEW_TYPE.DELETE_VIEW ? <UpdateCustomer setView={setView} id={udpateUser} /> : ''}
+      <Card className={classes.root} variant="outlined" >
+        Tip : Use Tab or Shift + Tab  to select option without mouse.
+      </Card>
 
     </ReactFocusLock >
   );
