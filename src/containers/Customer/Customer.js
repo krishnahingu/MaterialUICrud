@@ -59,7 +59,7 @@ const Customer = () => {
 
   const classes = useStyles();
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.events.users);
+  const users= useSelector((state) => state.events.users);
   const {isLoading } = useSelector((state) => state.loading);
   const [view, setView] = useState(0);
   const [newuser, setNewUser] = useState();

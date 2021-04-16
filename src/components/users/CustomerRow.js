@@ -25,7 +25,7 @@ const TableBodyCell = withStyles((theme) => ({
     borderBottom: 'none',
     fontWeight: 'normal',
   },
-}))(TableCell);
+}))(TableCell)
 
 const CustomerRow = ({
   id,
@@ -41,7 +41,7 @@ const CustomerRow = ({
   const isRowColored = index % 2 === 0;
   return (
     <TableRow key={key} classes={{ root: clsx(classes.root, { [classes.colored]: isRowColored }) }}>
-      <TableBodyCell size="small">{id}</TableBodyCell>
+      <TableBodyCell size="small">{index+1}</TableBodyCell>
       <TableBodyCell size="small">{customerGroup}</TableBodyCell>
       <Button tabIndex={ (view===VIEW_TYPE.UPDATE_VIEW ) ? -1 : id}  onClick={()=>{ setUpdateUser(id);setView(2)}}>
         <TableBodyCell size="small" >{customerName}</TableBodyCell>

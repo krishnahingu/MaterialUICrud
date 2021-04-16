@@ -11,6 +11,18 @@ const initialState = {
 const eventsReducer = (draft, action) => {
   switch (action.type) {
     case USER_DETAILS_SUCCESS: {
+      action.payload.sort((a, b) => {
+        let fa = a.first_name.toLowerCase(),
+            fb = b.first_name.toLowerCase();
+    
+        if (fa < fb) {
+            return -1;
+        }
+        if (fa > fb) {
+            return 1;
+        }
+        return 0;
+      });
       draft.users = action.payload;
       break;
     }
