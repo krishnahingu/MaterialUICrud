@@ -43,7 +43,7 @@ const CustomerRow = ({
     <TableRow key={key} classes={{ root: clsx(classes.root, { [classes.colored]: isRowColored }) }}>
       <TableBodyCell size="small">{index+1}</TableBodyCell>
       <TableBodyCell size="small">{customerGroup}</TableBodyCell>
-      <Button tabIndex={ (view===VIEW_TYPE.UPDATE_VIEW ) ? -1 : id}  onClick={()=>{ setUpdateUser(id);setView(2)}}>
+      <Button tabIndex={ (view===VIEW_TYPE.UPDATE_VIEW ) ? -1 : index+1}  onClick={()=>{ setUpdateUser(id);setView(2)}}>
         <TableBodyCell size="small" >{customerName}</TableBodyCell>
       </Button>
       
