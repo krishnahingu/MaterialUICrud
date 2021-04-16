@@ -1,4 +1,3 @@
-# CrowdFlik
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -33,13 +32,6 @@ Next, retrieve the needed ENV files for running the project from a team member:
 4. .env.production
 ```
 
-Finally, in order to run the project successfully while connected to the DIT backend server, you must have the following:
-
-- Encora VPN set up and running.
-- AWS credentials (access key id and secret access key) configured via AWS CLI:
-  - [Installation instructions](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
-  - [Configuration instructions](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
-
 ## Running The Project
 
 To run the project locally while connected to the local backend server, run:
@@ -52,5 +44,4 @@ To run the project locally while connected to the DIT environment backend server
 
 ```bash
 npm run start
-
 ```
