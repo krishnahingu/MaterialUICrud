@@ -1,6 +1,22 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project details 
+
+In this project we use below list of feature 
+
+1) React js
+2) React hook
+3) Redux
+4) Redux-saga
+5) Immer (for immutablility object)
+6) React focus lock  ( use to tab navigation )
+7) axios (use to API call) 
+8) Router (Page navigation)
+
+In this project we create table for customer group. Using this table  user can udpate , delete ,add customer group and name.
+
+
 ## Prerequisites
 
 - [Node.js and NPM](https://nodejs.org/en/download/)
@@ -33,14 +49,6 @@ Next, retrieve the needed ENV files for running the project from a team member:
 ```
 
 ## Running The Project
-
-To run the project locally while connected to the local backend server, run:
-
-```bash
-npm start
-```
-
-To run the project locally while connected to the DIT environment backend server, run:
 
 ```bash
 npm run start
