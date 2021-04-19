@@ -48,11 +48,9 @@ const DashboardHeader = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <img src={logo} style={{height:'35px'}} alt="CrowdFlik" />
-
+      <img src={logo} style={{ height: '35px' }} alt="logo" />
       <div className={classes.options}>
-        <div className={classes.option}>
-        </div>
+        <div className={classes.option} />
       </div>
     </div>
   );

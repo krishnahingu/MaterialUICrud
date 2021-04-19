@@ -25,7 +25,7 @@ const TableBodyCell = withStyles((theme) => ({
     borderBottom: 'none',
     fontWeight: 'normal',
   },
-}))(TableCell)
+}))(TableCell);
 
 const CustomerRow = ({
   id,
@@ -41,12 +41,12 @@ const CustomerRow = ({
   const isRowColored = index % 2 === 0;
   return (
     <TableRow key={key} classes={{ root: clsx(classes.root, { [classes.colored]: isRowColored }) }}>
-      <TableBodyCell size="small">{index+1}</TableBodyCell>
+      <TableBodyCell size="small">{index + 1}</TableBodyCell>
       <TableBodyCell size="small">{customerGroup}</TableBodyCell>
-      <Button tabIndex={ (view===VIEW_TYPE.UPDATE_VIEW ) ? -1 : index+1}  onClick={()=>{ setUpdateUser(id);setView(2)}}>
-        <TableBodyCell size="small" >{customerName}</TableBodyCell>
+      <Button tabIndex={(view === VIEW_TYPE.UPDATE_VIEW) ? -1 : index + 1} onClick={() => { setUpdateUser(id); setView(2); }}>
+        <TableBodyCell size="small">{customerName}</TableBodyCell>
       </Button>
-      
+
     </TableRow>
   );
 };
@@ -54,11 +54,12 @@ const CustomerRow = ({
 CustomerRow.propTypes = {
   id: number.isRequired,
   index: number.isRequired,
-  key:number.isRequired,
-  customerGroup:string.isRequired,
-  customerName:string.isRequired,
-  setView:func.isRequired,
-  setUpdateUser:func.isRequired
+  key: number.isRequired,
+  customerGroup: string.isRequired,
+  customerName: string.isRequired,
+  view: string.isRequired,
+  setView: func.isRequired,
+  setUpdateUser: func.isRequired
 
 };
 

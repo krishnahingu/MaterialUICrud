@@ -4,17 +4,16 @@ import {
 } from '../actions/actionTypes';
 
 const initialState = {
-  users:[]
+  users: []
 };
-
 
 const eventsReducer = (draft, action) => {
   switch (action.type) {
     case USER_DETAILS_SUCCESS: {
       action.payload.sort((a, b) => {
-        let fa = a.first_name.toLowerCase(),
-            fb = b.first_name.toLowerCase();
-    
+        const fa = a.first_name.toLowerCase();
+            const fb = b.first_name.toLowerCase();
+
         if (fa < fb) {
             return -1;
         }

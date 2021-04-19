@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 const apiURL = process.env.REACT_APP_REQRES_API || 'https://reqres.in/api';
 function getUsers() {
   const response = axios.get(`${apiURL}/users`);
@@ -15,7 +16,7 @@ function getCreatedUser({ first_name, last_name, email }) {
 function getUpdatedUser(id, user) {
   const response = axios.put(`${apiURL}/users/${id}`, {
     avatar: user.avatar,
-    id: id,
+    id,
     email: user.email,
     first_name: user.first_name,
     last_name: user.last_name
@@ -27,4 +28,6 @@ function getDeletedUser(id) {
   const response = axios.delete(`${apiURL}/users/${id}`);
   return response;
 }
-export { getUsers, getCreatedUser, getUpdatedUser, getDeletedUser };
+export {
+ getUsers, getCreatedUser, getUpdatedUser, getDeletedUser
+};

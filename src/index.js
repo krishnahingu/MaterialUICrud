@@ -19,7 +19,6 @@ import theme from './styles/theme';
 /** Entry File of the Application */
 import Routes from './router/Routes';
 
-
 /** Root Component Bind with Redux Provider and React Dom Router */
 const AppReduxRouter = () => {
   const myStore = getStore();
