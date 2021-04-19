@@ -9,7 +9,7 @@ function getCreatedUser({ first_name, last_name, email }) {
   const response = axios.post(`${apiURL}/users`, {
     email,
     first_name,
-    last_name
+    last_name,
   });
   return response;
 }
@@ -19,7 +19,7 @@ function getUpdatedUser(id, user) {
     id,
     email: user.email,
     first_name: user.first_name,
-    last_name: user.last_name
+    last_name: user.last_name,
   });
   return response;
 }
@@ -29,5 +29,5 @@ function getDeletedUser(id) {
   return response;
 }
 export {
- getUsers, getCreatedUser, getUpdatedUser, getDeletedUser
+ getUsers, getCreatedUser, getUpdatedUser, getDeletedUser 
 };

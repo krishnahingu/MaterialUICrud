@@ -22,13 +22,13 @@ const useStyles = makeStyles((theme) => ({
   },
   textButton: {
     margin: '20px',
-    paddingRight: '40px'
+    paddingRight: '40px',
   },
   lableText: {
     paddingLeft: '25px',
     fontSize: '16px',
-    fontWeight: 'bold'
-  }
+    fontWeight: 'bold',
+  },
 }));
 
 const UpdateCustomer = ({ setView, id }) => {
@@ -39,7 +39,12 @@ const UpdateCustomer = ({ setView, id }) => {
   const [updateName, setUpdateNmae] = useState(updateCustName?.last_name);
   const udpateCustomer = () => {
     const tempCusName = users.filter((user) => user.id !== id);
-    dispatch(fetchUserDetailsSuccess([...tempCusName, { ...updateCustName, last_name: updateName }]));
+    dispatch(
+      fetchUserDetailsSuccess([
+        ...tempCusName,
+        { ...updateCustName, last_name: updateName },
+      ])
+    );
     setView(0);
   };
   const deleteCustomer = () => {
@@ -49,46 +54,51 @@ const UpdateCustomer = ({ setView, id }) => {
   };
   const deleteName = () => {
     const tempCusName = users.filter((user) => user.id !== id);
-    dispatch(fetchUserDetailsSuccess([...tempCusName, { ...updateCustName, last_name: '' }]));
+    dispatch(
+      fetchUserDetailsSuccess([
+        ...tempCusName,
+        { ...updateCustName, last_name: '' },
+      ])
+    );
     setView(0);
   };
 
   return (
     <div className={classes.updateView}>
       <div className={classes.lableText}> Name:</div>
-        <TextField
-          id="standard-basic"
-          value={updateName}
-          size="small"
-          tabIndex={0}
-          autoFocus
-          fullWidth
-          className={classes.textButton}
-          onChange={(e) => setUpdateNmae(e.target.value)}
-          variant="outlined"
-        />
+      <TextField
+        id="standard-basic"
+        value={updateName}
+        size="small"
+        tabIndex={0}
+        autoFocus
+        fullWidth
+        className={classes.textButton}
+        onChange={(e) => setUpdateNmae(e.target.value)}
+        variant="outlined"
+      />
 
-        <div className={classes.buttonView}>
-          <Button
-            variant="contained"
-            color="success"
-            tabIndex={0}
-            fullWidth
-            className={classes.spacesButton}
-            onClick={udpateCustomer}
-          >
-            Save
-          </Button>
-          <Button
-            variant="contained"
-            tabIndex={0}
-            fullWidth
-            color="secondary"
-            className={classes.spacesButton}
-            onClick={deleteName}
-          >
-            Delete Name
-          </Button>
+      <div className={classes.buttonView}>
+        <Button
+          variant="contained"
+          color="success"
+          tabIndex={0}
+          fullWidth
+          className={classes.spacesButton}
+          onClick={udpateCustomer}
+        >
+          Save
+        </Button>
+        <Button
+          variant="contained"
+          tabIndex={0}
+          fullWidth
+          color="secondary"
+          className={classes.spacesButton}
+          onClick={deleteName}
+        >
+          Delete Name
+        </Button>
         <Button
           variant="contained"
           tabIndex={0}
@@ -97,9 +107,9 @@ const UpdateCustomer = ({ setView, id }) => {
           className={classes.spacesButton}
           onClick={deleteCustomer}
         >
-            Delete Record
+          Delete Record
         </Button>
-        </div>
+      </div>
     </div>
   );
 };
@@ -107,7 +117,6 @@ const UpdateCustomer = ({ setView, id }) => {
 UpdateCustomer.propTypes = {
   id: number.isRequired,
   setView: func.isRequired,
-
 };
 
 export default UpdateCustomer;

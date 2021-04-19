@@ -1,10 +1,8 @@
 import { produce } from 'immer';
-import {
-  USER_DETAILS_SUCCESS
-} from '../actions/actionTypes';
+import { USER_DETAILS_SUCCESS } from '../actions/actionTypes';
 
 const initialState = {
-  users: []
+  users: [],
 };
 
 const eventsReducer = (draft, action) => {
@@ -12,13 +10,13 @@ const eventsReducer = (draft, action) => {
     case USER_DETAILS_SUCCESS: {
       action.payload.sort((a, b) => {
         const fa = a?.first_name.toLowerCase();
-            const fb = b?.first_name.toLowerCase();
+        const fb = b?.first_name.toLowerCase();
 
         if (fa < fb) {
-            return -1;
+          return -1;
         }
         if (fa > fb) {
-            return 1;
+          return 1;
         }
         return 0;
       });

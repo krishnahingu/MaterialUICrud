@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Switch, Redirect
-} from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 import Layout from '../components/layouts/Layout';
 import PrivateRoute from '../components/PrivateRoute';
 

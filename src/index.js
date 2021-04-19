@@ -34,7 +34,4 @@ const AppReduxRouter = () => {
   );
 };
 
-ReactDOM.render(
-  <AppReduxRouter />,
-  document.getElementById('root')
-);
+ReactDOM.render(<AppReduxRouter />, document.getElementById('root'));

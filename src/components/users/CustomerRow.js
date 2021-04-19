@@ -35,18 +35,28 @@ const CustomerRow = ({
   customerName,
   setView,
   view,
-  setUpdateUser
+  setUpdateUser,
 }) => {
   const classes = useStyles();
   const isRowColored = index % 2 === 0;
   return (
-    <TableRow key={key} classes={{ root: clsx(classes.root, { [classes.colored]: isRowColored }) }}>
+    <TableRow
+      key={key}
+      classes={{
+        root: clsx(classes.root, { [classes.colored]: isRowColored }),
+      }}
+    >
       <TableBodyCell size="small">{index + 1}</TableBodyCell>
       <TableBodyCell size="small">{customerGroup}</TableBodyCell>
-      <Button tabIndex={(view === VIEW_TYPE.UPDATE_VIEW) ? -1 : index + 1} onClick={() => { setUpdateUser(id); setView(2); }}>
+      <Button
+        tabIndex={view === VIEW_TYPE.UPDATE_VIEW ? -1 : index + 1}
+        onClick={() => {
+          setUpdateUser(id);
+          setView(2);
+        }}
+      >
         <TableBodyCell size="small">{customerName}</TableBodyCell>
       </Button>
-
     </TableRow>
   );
 };
@@ -59,8 +69,7 @@ CustomerRow.propTypes = {
   customerName: string.isRequired,
   view: string.isRequired,
   setView: func.isRequired,
-  setUpdateUser: func.isRequired
-
+  setUpdateUser: func.isRequired,
 };
 
 export default CustomerRow;

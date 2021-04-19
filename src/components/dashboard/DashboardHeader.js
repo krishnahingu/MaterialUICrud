@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '0.75rem',
   },
   link: {
-    'cursor': 'pointer',
+    cursor: 'pointer',
     '&:hover': {
       color: theme.palette.primary.main,
       textDecoration: 'underline',

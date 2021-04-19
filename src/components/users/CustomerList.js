@@ -32,7 +32,12 @@ const TableBodyCell = withStyles((theme) => ({
 }))(TableCell);
 
 const CustomerList = ({
- users, view, setView, newuser, setNewUser, setUpdateUser
+  users,
+  view,
+  setView,
+  newuser,
+  setNewUser,
+  setUpdateUser,
 }) => {
   const [groupSort, setGroupSort] = useState(true);
   const [fieldName, setFieldName] = useState('first_name');
@@ -40,23 +45,19 @@ const CustomerList = ({
     const temp = [...users];
     temp.sort((a, b) => {
       const fa = a[fieldName].toLowerCase();
-          const fb = b[fieldName].toLowerCase();
+      const fb = b[fieldName].toLowerCase();
       if (fa < fb) {
-          return (groupSort) ? 1 : -1;
+        return groupSort ? 1 : -1;
       }
       if (fa > fb) {
-          return (groupSort) ? -1 : 1;
+        return groupSort ? -1 : 1;
       }
       return 0;
     });
     return [...temp];
   };
   const data = sorDataOnGroup();
-  const customerListItems = data.map(({
-    id,
-    first_name,
-    last_name,
-  }, index) => (
+  const customerListItems = data.map(({ id, first_name, last_name }, index) => (
     <CustomerRow
       index={index}
       key={id}
@@ -91,8 +92,15 @@ const CustomerList = ({
         <TableHead>
           <TableRow>
             <TableHeadCell size="small">Sequence</TableHeadCell>
-            <TableHeadCell size="small" onClick={() => customSort('first_name')}>Customer Group { isFirstNameSort && isUpSort } </TableHeadCell>
-            <TableHeadCell size="small" onClick={() => customSort('last_name')}>Customer Name { isLastNameSort && isUpSort }</TableHeadCell>
+            <TableHeadCell
+              size="small"
+              onClick={() => customSort('first_name')}
+            >
+              Customer Group {isFirstNameSort && isUpSort}{' '}
+            </TableHeadCell>
+            <TableHeadCell size="small" onClick={() => customSort('last_name')}>
+              Customer Name {isLastNameSort && isUpSort}
+            </TableHeadCell>
           </TableRow>
         </TableHead>
 
@@ -102,10 +110,23 @@ const CustomerList = ({
             <>
               <TableBodyCell size="small" />
               <TableBodyCell size="small">
-                <TextField id="standard-basic" label="" autoFocus size="small" onChange={(e) => firstnameChange(e)} variant="outlined" />
+                <TextField
+                  id="standard-basic"
+                  label=""
+                  autoFocus
+                  size="small"
+                  onChange={(e) => firstnameChange(e)}
+                  variant="outlined"
+                />
               </TableBodyCell>
               <TableBodyCell size="small">
-                <TextField id="standard-basic" label="" size="small" onChange={(e) => lastnameChange(e)} variant="outlined" />
+                <TextField
+                  id="standard-basic"
+                  label=""
+                  size="small"
+                  onChange={(e) => lastnameChange(e)}
+                  variant="outlined"
+                />
               </TableBodyCell>
             </>
           )}
@@ -121,7 +142,7 @@ CustomerList.propTypes = {
   setView: func.isRequired,
   newuser: string.isRequired,
   setNewUser: func.isRequired,
-  setUpdateUser: func.isRequired
+  setUpdateUser: func.isRequired,
 };
 
 export default CustomerList;

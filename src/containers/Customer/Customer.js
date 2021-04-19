@@ -1,6 +1,4 @@
-import {
-  Button, makeStyles
-} from '@material-ui/core';
+import { Button, makeStyles } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import ReactFocusLock from 'react-focus-lock';
 import { useDispatch, useSelector } from 'react-redux';
@@ -24,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   textButton: {
     margin: '20px',
-    paddingRight: '40px'
+    paddingRight: '40px',
   },
   addButton: {
     marginTop: '25px',
@@ -46,7 +44,9 @@ const Customer = () => {
 
   const saveuser = () => {
     setView(0);
-    if (newuser) { dispatch(addUsers(newuser)); }
+    if (newuser) {
+      dispatch(addUsers(newuser));
+    }
   };
   const insertUser = () => {
     setView(1);
@@ -101,7 +101,7 @@ const Customer = () => {
           </div>
         );
         break;
-        default:
+      default:
     }
     return (
       <>

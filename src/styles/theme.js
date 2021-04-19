@@ -10,14 +10,11 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: '#EE1A26',
-    }
+    },
   },
   spacing: 8,
   typography: {
-    fontFamily: [
-      'Source Sans Pro',
-      'serif',
-    ].join(','),
+    fontFamily: ['Source Sans Pro', 'serif'].join(','),
   },
 });
 

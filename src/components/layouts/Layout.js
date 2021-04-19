@@ -21,7 +21,9 @@ const useStyles = makeStyles((theme) => ({
   content: {
     width: '82%',
     flexBasis: '82%',
-    padding: `${theme.spacing(2)}px ${theme.spacing(2)}px ${theme.spacing(2)}px ${theme.spacing(4)}px`,
+    padding: `${theme.spacing(2)}px ${theme.spacing(2)}px ${theme.spacing(
+      2
+    )}px ${theme.spacing(4)}px`,
     backgroundColor: '#fff',
   },
 }));
@@ -33,19 +35,14 @@ const Layout = ({ children }) => {
       <DashboardHeader />
       <div className={classes.contentRoot}>
         <DashboardNavigation />
-        <div className={classes.content}>
-          {children}
-        </div>
+        <div className={classes.content}>{children}</div>
       </div>
     </div>
   );
 };
 
 Layout.propTypes = {
-  children: oneOfType([
-    arrayOf(node),
-    node,
-  ]),
+  children: oneOfType([arrayOf(node), node]),
 };
 
 export default Layout;
