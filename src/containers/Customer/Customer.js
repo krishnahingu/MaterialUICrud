@@ -22,10 +22,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-evenly',
     margin: '10px',
   },
-  spacesbutton: {
-    margin: '10px',
-  },
-  textbutton: {
+  textButton: {
     margin: '20px',
     paddingRight: '40px'
   },
@@ -86,7 +83,7 @@ const Customer = () => {
               color="success"
               tabIndex={0}
               onClick={saveuser}
-              className={classes.textbutton}
+              className={classes.textButton}
               fullWidth
             >
               Save
@@ -96,7 +93,7 @@ const Customer = () => {
               color="secondary"
               tabIndex={0}
               fullWidth
-              className={classes.textbutton}
+              className={classes.textButton}
               onClick={() => setView(0)}
             >
               Cancel

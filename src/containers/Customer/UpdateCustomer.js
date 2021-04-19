@@ -17,10 +17,10 @@ const useStyles = makeStyles((theme) => ({
     margin: '10px',
   },
 
-  spacesbutton: {
+  spacesButton: {
     margin: '10px',
   },
-  textbutton: {
+  textButton: {
     margin: '20px',
     paddingRight: '40px'
   },
@@ -63,7 +63,7 @@ const UpdateCustomer = ({ setView, id }) => {
           tabIndex={0}
           autoFocus
           fullWidth
-          className={classes.textbutton}
+          className={classes.textButton}
           onChange={(e) => setUpdateNmae(e.target.value)}
           variant="outlined"
         />
@@ -74,7 +74,7 @@ const UpdateCustomer = ({ setView, id }) => {
             color="success"
             tabIndex={0}
             fullWidth
-            className={classes.spacesbutton}
+            className={classes.spacesButton}
             onClick={udpateCustomer}
           >
             Save
@@ -84,7 +84,7 @@ const UpdateCustomer = ({ setView, id }) => {
             tabIndex={0}
             fullWidth
             color="secondary"
-            className={classes.spacesbutton}
+            className={classes.spacesButton}
             onClick={deleteName}
           >
             Delete Name
@@ -94,7 +94,7 @@ const UpdateCustomer = ({ setView, id }) => {
           tabIndex={0}
           fullWidth
           color="secondary"
-          className={classes.spacesbutton}
+          className={classes.spacesButton}
           onClick={deleteCustomer}
         >
             Delete Record
@@ -107,6 +107,7 @@ const UpdateCustomer = ({ setView, id }) => {
 UpdateCustomer.propTypes = {
   id: number.isRequired,
   setView: func.isRequired,
+
 };
 
 export default UpdateCustomer;
